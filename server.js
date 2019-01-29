@@ -1,5 +1,5 @@
 /**
- * This file (server.js) is the backend set up for this application.
+ * This file (server.js) is the back end set up for this application.
  */
 
 // Require necessary dependencies for application
@@ -16,7 +16,7 @@ const express = require('express');
 // http://mongoosejs.com/docs/guide.html
 const mongoose = require('mongoose');
 
-// Body Parser is crucial for reading data submitted through POST requests to the backend / express routes
+// Body Parser is crucial for reading data submitted through POST requests to the back end / express routes
 // It extracts the information from the request and attaches it to the express request body object (i.e. - req.body)
 // See this stackoverflow article for a better description: 
 // https://stackoverflow.com/a/43626891
@@ -25,8 +25,7 @@ const bodyParser = require('body-parser');
 // Path module is used to create absolute paths to any specified folders/files in our application
 // This is particularly useful when you build your projects because files or paths can get moved
 const path = require('path');
-// FROM JASON
-// The other place path is really useful is for running the code on different environmnets. Some versions of linux are
+// The other place path is really useful is for running the code on different environments. Some versions of linux are
 // not as strict about case-sensitivity (like Windows) in paths. Windows also uses different path separators (\ instead of /).
 
 // Initialize an instance of express and attach it to const app
@@ -47,7 +46,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Check out this Quora thread to gain a better understanding of how body parser interacts with express
 // https://www.quora.com/What-exactly-does-body-parser-do-with-express-js-and-why-do-I-need-it
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 app.use(bodyParser.json());
 
 // Create a variable to store the MongoURI path to your database connection
