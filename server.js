@@ -1,4 +1,4 @@
-/**
+/*
  * This file (server.js) is the back end set up for this application.
  */
 
